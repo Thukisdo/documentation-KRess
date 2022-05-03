@@ -2,7 +2,9 @@ var hierarchy =
 [
     [ "nnet::BatchLocation", "classnnet_1_1_batch_location.html", null ],
     [ "nnet::BatchSchedulerJob", "classnnet_1_1_batch_scheduler_job.html", null ],
-    [ "nnet::ParallelScheduler::Builder", "classnnet_1_1_parallel_scheduler_1_1_builder.html", null ],
+    [ "nnet::ParallelScheduler::Builder", "classnnet_1_1_parallel_scheduler_1_1_builder.html", [
+      [ "nnet::MPIParallelScheduler::Builder", "classnnet_1_1_m_p_i_parallel_scheduler_1_1_builder.html", null ]
+    ] ],
     [ "math::clFMatrix", "classmath_1_1cl_f_matrix.html", null ],
     [ "math::clFTensor", "classmath_1_1cl_f_tensor.html", null ],
     [ "utils::clKernelMap", "classutils_1_1cl_kernel_map.html", null ],
@@ -48,14 +50,18 @@ var hierarchy =
     [ "nnet::MLPTopology", "classnnet_1_1_m_l_p_topology.html", null ],
     [ "nnet::Model", "classnnet_1_1_model.html", [
       [ "nnet::CNNModel", "classnnet_1_1_c_n_n_model.html", null ],
-      [ "nnet::MLPModel", "classnnet_1_1_m_l_p_model.html", null ]
+      [ "nnet::MLPModel", "classnnet_1_1_m_l_p_model.html", [
+        [ "nnet::MPIMLPModel", "classnnet_1_1_m_p_i_m_l_p_model.html", null ]
+      ] ]
     ] ],
     [ "control::ModelEvaluation", "structcontrol_1_1_model_evaluation.html", null ],
     [ "control::ModelEvaluator", "classcontrol_1_1_model_evaluator.html", null ],
     [ "control::ModelEvolutionTracker", "classcontrol_1_1_model_evolution_tracker.html", null ],
     [ "nnet::Optimizer::Operation", "classnnet_1_1_optimizer_1_1_operation.html", [
       [ "nnet::CNNOptimizer::Operation", "classnnet_1_1_c_n_n_optimizer_1_1_operation.html", null ],
-      [ "nnet::MLPOptimizer::Operation", "classnnet_1_1_m_l_p_optimizer_1_1_operation.html", null ]
+      [ "nnet::MLPOptimizer::Operation", "classnnet_1_1_m_l_p_optimizer_1_1_operation.html", [
+        [ "nnet::MPIMLPOptimizer::Operation", "classnnet_1_1_m_p_i_m_l_p_optimizer_1_1_operation.html", null ]
+      ] ]
     ] ],
     [ "nnet::Optimization", "classnnet_1_1_optimization.html", [
       [ "nnet::DecayMomentumOptimization", "classnnet_1_1_decay_momentum_optimization.html", null ],
@@ -65,21 +71,30 @@ var hierarchy =
     ] ],
     [ "nnet::OptimizationScheduler", "classnnet_1_1_optimization_scheduler.html", [
       [ "nnet::BatchOptimizationScheduler", "classnnet_1_1_batch_optimization_scheduler.html", [
-        [ "nnet::ParallelScheduler", "classnnet_1_1_parallel_scheduler.html", null ]
+        [ "nnet::ParallelScheduler", "classnnet_1_1_parallel_scheduler.html", [
+          [ "nnet::MPIParallelScheduler", "classnnet_1_1_m_p_i_parallel_scheduler.html", null ]
+        ] ]
       ] ],
       [ "nnet::SchedulerDecorator", "classnnet_1_1_scheduler_decorator.html", [
         [ "nnet::SchedulerProfiler", "classnnet_1_1_scheduler_profiler.html", null ]
       ] ]
     ] ],
     [ "nnet::Optimizer", "classnnet_1_1_optimizer.html", [
-      [ "nnet::CNNOptimizer", "classnnet_1_1_c_n_n_optimizer.html", null ],
-      [ "nnet::MLPOptimizer", "classnnet_1_1_m_l_p_optimizer.html", null ]
+      [ "nnet::CNNOptimizer", "classnnet_1_1_c_n_n_optimizer.html", [
+        [ "MPICNNOptimizer", "class_m_p_i_c_n_n_optimizer.html", null ]
+      ] ],
+      [ "nnet::MLPOptimizer", "classnnet_1_1_m_l_p_optimizer.html", [
+        [ "nnet::MPIMLPOptimizer", "classnnet_1_1_m_p_i_m_l_p_optimizer.html", null ]
+      ] ]
     ] ],
     [ "nnet::ParallelScheduler::Policy", "classnnet_1_1_parallel_scheduler_1_1_policy.html", null ],
     [ "control::Sample", "classcontrol_1_1_sample.html", null ],
     [ "control::TrainingCollection", "classcontrol_1_1_training_collection.html", null ],
     [ "control::TrainingCollectionLoader", "classcontrol_1_1_training_collection_loader.html", null ],
-    [ "control::TrainingController", "classcontrol_1_1_training_controller.html", null ],
+    [ "mpiw::TrainingCollectionScatterer", "classmpiw_1_1_training_collection_scatterer.html", null ],
+    [ "control::TrainingController", "classcontrol_1_1_training_controller.html", [
+      [ "control::MPITrainingController", "classcontrol_1_1_m_p_i_training_controller.html", null ]
+    ] ],
     [ "image::transform::Transformation", "classimage_1_1transform_1_1_transformation.html", [
       [ "image::transform::BinaryScale", "classimage_1_1transform_1_1_binary_scale.html", null ],
       [ "image::transform::BinaryScaleByMedian", "classimage_1_1transform_1_1_binary_scale_by_median.html", null ],

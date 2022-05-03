@@ -1,15 +1,20 @@
 var searchData=
 [
-  ['matrix_264',['Matrix',['../classmath_1_1_matrix.html',1,'math']]],
-  ['mlperceptron_265',['MLPerceptron',['../classnnet_1_1_m_l_perceptron.html',1,'nnet']]],
-  ['mlpmodel_266',['MLPModel',['../classnnet_1_1_m_l_p_model.html',1,'nnet']]],
-  ['mlpmodelserializer_267',['MLPModelSerializer',['../classnnet_1_1_m_l_p_model_serializer.html',1,'nnet']]],
-  ['mlpoptimizer_268',['MLPOptimizer',['../classnnet_1_1_m_l_p_optimizer.html',1,'nnet']]],
-  ['mlpserializer_269',['MLPSerializer',['../classnnet_1_1_m_l_p_serializer.html',1,'nnet']]],
-  ['mlptopology_270',['MLPTopology',['../classnnet_1_1_m_l_p_topology.html',1,'nnet']]],
-  ['model_271',['Model',['../classnnet_1_1_model.html',1,'nnet']]],
-  ['modelevaluation_272',['ModelEvaluation',['../structcontrol_1_1_model_evaluation.html',1,'control']]],
-  ['modelevaluator_273',['ModelEvaluator',['../classcontrol_1_1_model_evaluator.html',1,'control']]],
-  ['modelevolutiontracker_274',['ModelEvolutionTracker',['../classcontrol_1_1_model_evolution_tracker.html',1,'control']]],
-  ['momentumoptimization_275',['MomentumOptimization',['../classnnet_1_1_momentum_optimization.html',1,'nnet']]]
+  ['matrix_275',['Matrix',['../classmath_1_1_matrix.html',1,'math']]],
+  ['mlperceptron_276',['MLPerceptron',['../classnnet_1_1_m_l_perceptron.html',1,'nnet']]],
+  ['mlpmodel_277',['MLPModel',['../classnnet_1_1_m_l_p_model.html',1,'nnet']]],
+  ['mlpmodelserializer_278',['MLPModelSerializer',['../classnnet_1_1_m_l_p_model_serializer.html',1,'nnet']]],
+  ['mlpoptimizer_279',['MLPOptimizer',['../classnnet_1_1_m_l_p_optimizer.html',1,'nnet']]],
+  ['mlpserializer_280',['MLPSerializer',['../classnnet_1_1_m_l_p_serializer.html',1,'nnet']]],
+  ['mlptopology_281',['MLPTopology',['../classnnet_1_1_m_l_p_topology.html',1,'nnet']]],
+  ['model_282',['Model',['../classnnet_1_1_model.html',1,'nnet']]],
+  ['modelevaluation_283',['ModelEvaluation',['../structcontrol_1_1_model_evaluation.html',1,'control']]],
+  ['modelevaluator_284',['ModelEvaluator',['../classcontrol_1_1_model_evaluator.html',1,'control']]],
+  ['modelevolutiontracker_285',['ModelEvolutionTracker',['../classcontrol_1_1_model_evolution_tracker.html',1,'control']]],
+  ['momentumoptimization_286',['MomentumOptimization',['../classnnet_1_1_momentum_optimization.html',1,'nnet']]],
+  ['mpicnnoptimizer_287',['MPICNNOptimizer',['../class_m_p_i_c_n_n_optimizer.html',1,'']]],
+  ['mpimlpmodel_288',['MPIMLPModel',['../classnnet_1_1_m_p_i_m_l_p_model.html',1,'nnet']]],
+  ['mpimlpoptimizer_289',['MPIMLPOptimizer',['../classnnet_1_1_m_p_i_m_l_p_optimizer.html',1,'nnet']]],
+  ['mpiparallelscheduler_290',['MPIParallelScheduler',['../classnnet_1_1_m_p_i_parallel_scheduler.html',1,'nnet']]],
+  ['mpitrainingcontroller_291',['MPITrainingController',['../classcontrol_1_1_m_p_i_training_controller.html',1,'control']]]
 ];

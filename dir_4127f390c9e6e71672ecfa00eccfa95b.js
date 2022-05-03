@@ -6,5 +6,7 @@ var dir_4127f390c9e6e71672ecfa00eccfa95b =
     [ "MLPModel.hpp", "_m_l_p_model_8hpp_source.html", null ],
     [ "MLPModelSerializer.hpp", "_m_l_p_model_serializer_8hpp_source.html", null ],
     [ "MLPOptimizer.hpp", "_m_l_p_optimizer_8hpp_source.html", null ],
-    [ "MLPSerializer.hpp", "_m_l_p_serializer_8hpp_source.html", null ]
+    [ "MLPSerializer.hpp", "_m_l_p_serializer_8hpp_source.html", null ],
+    [ "MPIMLPModel.hpp", "_m_p_i_m_l_p_model_8hpp_source.html", null ],
+    [ "MPIMLPOptimizer.hpp", "_m_p_i_m_l_p_optimizer_8hpp_source.html", null ]
 ];

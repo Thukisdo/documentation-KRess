@@ -97,9 +97,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a859664b903f805998d99b9d842f507b3"><td class="memItemLeft" align="right" valign="top"><a id="a859664b903f805998d99b9d842f507b3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>WeightUpdateCache</b> (<a class="el" href="classnnet_1_1_m_l_p_optimizer.html">MLPOptimizer</a> &amp;optimizer)</td></tr>
 <tr class="separator:a859664b903f805998d99b9d842f507b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9ab8bdc7858bdc237720179386f5b9"><td class="memItemLeft" align="right" valign="top"><a id="aca9ab8bdc7858bdc237720179386f5b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WeightUpdateCache</b> (std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &gt; weight_updates, size_t contributions)</td></tr>
-<tr class="separator:aca9ab8bdc7858bdc237720179386f5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aefa2750f05bae024485638b6e57ef7"><td class="memItemLeft" align="right" valign="top"><a id="a5aefa2750f05bae024485638b6e57ef7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>WeightUpdateCache</b> (<a class="el" href="classnnet_1_1_m_l_p_optimizer.html">MLPOptimizer</a> &amp;optimizer, std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &gt; weight_updates, size_t contributions)</td></tr>
+<tr class="separator:a5aefa2750f05bae024485638b6e57ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae001d970b7c8944f0bd4cd0f5d9e2719"><td class="memItemLeft" align="right" valign="top"><a id="ae001d970b7c8944f0bd4cd0f5d9e2719"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>WeightUpdateCache</b> (<a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a> &amp;&amp;other)=default</td></tr>
+<tr class="separator:ae001d970b7c8944f0bd4cd0f5d9e2719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893bd05cfb750c50787a651783fb6eb3"><td class="memItemLeft" align="right" valign="top"><a id="a893bd05cfb750c50787a651783fb6eb3"></a>
+<a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a> &amp;&amp;other)=default</td></tr>
+<tr class="separator:a893bd05cfb750c50787a651783fb6eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d725aa041e7f1549f66eee3618c086e"><td class="memItemLeft" align="right" valign="top"><a id="a5d725aa041e7f1549f66eee3618c086e"></a>
 <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (size_t i)</td></tr>
 <tr class="separator:a5d725aa041e7f1549f66eee3618c086e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,6 +118,18 @@ const std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::c
 <tr class="memitem:aa7e6b5680398b49b5f92042c3fe90f9c"><td class="memItemLeft" align="right" valign="top"><a id="aa7e6b5680398b49b5f92042c3fe90f9c"></a>
 const std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getBiasesCopy</b> () const</td></tr>
 <tr class="separator:aa7e6b5680398b49b5f92042c3fe90f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a615260c09a95dabcf8f7a53183ee3a2a"><td class="memItemLeft" align="right" valign="top"><a id="a615260c09a95dabcf8f7a53183ee3a2a"></a>
+const std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getWeightUpdates</b> () const</td></tr>
+<tr class="separator:a615260c09a95dabcf8f7a53183ee3a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cf0a8fe2345380d9a2f52b8cc091d26"><td class="memItemLeft" align="right" valign="top"><a id="a4cf0a8fe2345380d9a2f52b8cc091d26"></a>
+std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getWeightUpdates</b> ()</td></tr>
+<tr class="separator:a4cf0a8fe2345380d9a2f52b8cc091d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3beec08df9e416a9edcae619a90744c4"><td class="memItemLeft" align="right" valign="top"><a id="a3beec08df9e416a9edcae619a90744c4"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getContribution</b> () const</td></tr>
+<tr class="separator:a3beec08df9e416a9edcae619a90744c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac20c831f473c3be8f33e84339b0323e1"><td class="memItemLeft" align="right" valign="top"><a id="ac20c831f473c3be8f33e84339b0323e1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setContribution</b> (size_t new_contribution)</td></tr>
+<tr class="separator:ac20c831f473c3be8f33e84339b0323e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cbdf2175e1ed58b433c9d86ccfd6c2b"><td class="memItemLeft" align="right" valign="top"><a id="a0cbdf2175e1ed58b433c9d86ccfd6c2b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (size_t index, const <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &amp;delta, size_t contribution_size, cl::CommandQueue &amp;queue)</td></tr>
 <tr class="separator:a0cbdf2175e1ed58b433c9d86ccfd6c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +180,7 @@ std::vector&lt; <a class="el" href="classmath_1_1cl_f_matrix.html">math::clFMatr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>nnet</b></li><li class="navelem"><a class="el" href="classnnet_1_1_m_l_p_optimizer.html">MLPOptimizer</a></li><li class="navelem"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

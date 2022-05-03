@@ -7,6 +7,6 @@ var searchData=
   ['begintensor_10',['beginTensor',['../classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e',1,'control::InputSet']]],
   ['binaryscale_11',['BinaryScale',['../classimage_1_1transform_1_1_binary_scale.html',1,'image::transform']]],
   ['binaryscalebymedian_12',['BinaryScaleByMedian',['../classimage_1_1transform_1_1_binary_scale_by_median.html',1,'image::transform']]],
-  ['build_13',['build',['../classnnet_1_1_parallel_scheduler_1_1_builder.html#ace2e71c849f779fb919ff4faf62032d1',1,'nnet::ParallelScheduler::Builder']]],
-  ['builder_14',['Builder',['../classnnet_1_1_parallel_scheduler_1_1_builder.html',1,'nnet::ParallelScheduler']]]
+  ['build_13',['build',['../classnnet_1_1_m_p_i_parallel_scheduler_1_1_builder.html#af078947d42bfe39e3dd1567f6532ed0f',1,'nnet::MPIParallelScheduler::Builder::build()'],['../classnnet_1_1_parallel_scheduler_1_1_builder.html#ace2e71c849f779fb919ff4faf62032d1',1,'nnet::ParallelScheduler::Builder::build()']]],
+  ['builder_14',['Builder',['../classnnet_1_1_m_p_i_parallel_scheduler_1_1_builder.html',1,'nnet::MPIParallelScheduler::Builder'],['../classnnet_1_1_parallel_scheduler_1_1_builder.html',1,'nnet::ParallelScheduler::Builder']]]
 ];

@@ -10,5 +10,8 @@ var classnnet_1_1_parallel_scheduler =
     [ "epochStart", "classnnet_1_1_parallel_scheduler.html#a26c6442bf68ee78799e4f5517df4afdb", null ],
     [ "print", "classnnet_1_1_parallel_scheduler.html#a0b6987ad2b878f4be2866fba243efaf8", null ],
     [ "run", "classnnet_1_1_parallel_scheduler.html#a2a0f65820b2c1ae5f6f2dbd17bda484f", null ],
-    [ "updateModel", "classnnet_1_1_parallel_scheduler.html#acbf0e7b07994d0c33a3f6f23264f01cf", null ]
+    [ "updateModel", "classnnet_1_1_parallel_scheduler.html#acbf0e7b07994d0c33a3f6f23264f01cf", null ],
+    [ "batch_dispatcher", "classnnet_1_1_parallel_scheduler.html#af1768a267ef996042fa3fcd6152ffb1c", null ],
+    [ "optimizer", "classnnet_1_1_parallel_scheduler.html#a331ed357ce1746a23d4ac4c4343c5332", null ],
+    [ "optimizer_operation", "classnnet_1_1_parallel_scheduler.html#a022f8420447685b3c078d6383cd34e24", null ]
 ];

@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classnnet_1_1_parallel_scheduler_1_1_b
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classnnet_1_1_parallel_scheduler_1_1_builder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nnet::ParallelScheduler::Builder Class Reference</div>  </div>
@@ -95,6 +96,15 @@ $(document).ready(function(){initNavTree('classnnet_1_1_parallel_scheduler_1_1_b
  <a href="classnnet_1_1_parallel_scheduler_1_1_builder.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_parallel_scheduler_8hpp_source.html">ParallelScheduler.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for nnet::ParallelScheduler::Builder:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classnnet_1_1_parallel_scheduler_1_1_builder.png" usemap="#nnet::ParallelScheduler::Builder_map" alt=""/>
+  <map id="nnet::ParallelScheduler::Builder_map" name="nnet::ParallelScheduler::Builder_map">
+<area href="classnnet_1_1_m_p_i_parallel_scheduler_1_1_builder.html" alt="nnet::MPIParallelScheduler::Builder" shape="rect" coords="0,56,211,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -110,8 +120,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa14de28ebab2bd7418a0a48123ebfa71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_parallel_scheduler_1_1_builder.html#aa14de28ebab2bd7418a0a48123ebfa71">setOptimizer</a> (<a class="el" href="classnnet_1_1_optimizer.html">Optimizer</a> &amp;new_optimizer)</td></tr>
 <tr class="memdesc:aa14de28ebab2bd7418a0a48123ebfa71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the optimizer that the scheduler will use.  <a href="classnnet_1_1_parallel_scheduler_1_1_builder.html#aa14de28ebab2bd7418a0a48123ebfa71">More...</a><br /></td></tr>
 <tr class="separator:aa14de28ebab2bd7418a0a48123ebfa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace2e71c849f779fb919ff4faf62032d1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classnnet_1_1_parallel_scheduler.html">ParallelScheduler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_parallel_scheduler_1_1_builder.html#ace2e71c849f779fb919ff4faf62032d1">build</a> () const</td></tr>
+<tr class="memitem:ace2e71c849f779fb919ff4faf62032d1"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classnnet_1_1_parallel_scheduler.html">ParallelScheduler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_parallel_scheduler_1_1_builder.html#ace2e71c849f779fb919ff4faf62032d1">build</a> () const</td></tr>
 <tr class="separator:ace2e71c849f779fb919ff4faf62032d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a893374ce316b1ef10850e32bd8446a83"><td class="memItemLeft" align="right" valign="top"><a id="a893374ce316b1ef10850e32bd8446a83"></a>
+<a class="el" href="classnnet_1_1_batch_scheduler_job.html">BatchSchedulerJob</a>&#160;</td><td class="memItemRight" valign="bottom"><b>job</b></td></tr>
+<tr class="separator:a893374ce316b1ef10850e32bd8446a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d8112064f3102a3842d524b94bfe1b"><td class="memItemLeft" align="right" valign="top"><a id="a34d8112064f3102a3842d524b94bfe1b"></a>
+<a class="el" href="classnnet_1_1_optimizer.html">Optimizer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>optimizer</b></td></tr>
+<tr class="separator:a34d8112064f3102a3842d524b94bfe1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d244bc93eea0ed3c9ac375b52a640f"><td class="memItemLeft" align="right" valign="top"><a id="a75d244bc93eea0ed3c9ac375b52a640f"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>max_thread</b> = 1</td></tr>
+<tr class="separator:a75d244bc93eea0ed3c9ac375b52a640f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5912ae852afd872b2d8ad741df19ca68"><td class="memItemLeft" align="right" valign="top"><a id="a5912ae852afd872b2d8ad741df19ca68"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>multiple_thread_per_device</b> = false</td></tr>
+<tr class="separator:a5912ae852afd872b2d8ad741df19ca68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0e31b9fcec54cec31088afdf9ea1e4"><td class="memItemLeft" align="right" valign="top"><a id="a6a0e31b9fcec54cec31088afdf9ea1e4"></a>
+std::vector&lt; cl::Device &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>devices</b> = utils::cl_wrapper.getDevices()</td></tr>
+<tr class="separator:a6a0e31b9fcec54cec31088afdf9ea1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Concrete builder for <a class="el" href="classnnet_1_1_parallel_scheduler.html" title="A scheduler that parallelize the training of a neural network. Batches are distributed among all thre...">ParallelScheduler</a>. </p>
@@ -121,6 +149,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classnnet_1_1_parallel_scheduler.html">ParallelScheduler</a> &gt; nnet::ParallelScheduler::Builder::build </td>
@@ -129,8 +160,15 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>@brielf Builds the parallel scheduler </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classnnet_1_1_m_p_i_parallel_scheduler_1_1_builder.html#af078947d42bfe39e3dd1567f6532ed0f">nnet::MPIParallelScheduler::Builder</a>.</p>
 
 </div>
 </div>
@@ -291,7 +329,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>nnet</b></li><li class="navelem"><a class="el" href="classnnet_1_1_parallel_scheduler.html">ParallelScheduler</a></li><li class="navelem"><a class="el" href="classnnet_1_1_parallel_scheduler_1_1_builder.html">Builder</a></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

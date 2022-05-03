@@ -4,6 +4,6 @@ var searchData=
   ['altertensors_1',['alterTensors',['../classcontrol_1_1_input_set.html#a2bf76ed5dd9f349cabde840649b03334',1,'control::InputSet::alterTensors()'],['../classcontrol_1_1_training_collection.html#a360617fc05025fb94243011dd8d52362',1,'control::TrainingCollection::alterTensors()']]],
   ['append_2',['append',['../classcontrol_1_1_input_set.html#a1df77d22de301b116d8fba766c4b8b94',1,'control::InputSet']]],
   ['apply_3',['apply',['../classimage_1_1transform_1_1_transform_engine.html#a359b9514eb1a3148a2af2d4c36273ffc',1,'image::transform::TransformEngine']]],
-  ['applychanges_4',['applyChanges',['../classnnet_1_1_m_l_p_optimizer_1_1_operation.html#aa7d2cbbbb8d0c37fe7e666c11bae9149',1,'nnet::MLPOptimizer::Operation']]],
+  ['applychanges_4',['applyChanges',['../classnnet_1_1_m_l_p_optimizer_1_1_operation.html#aa7d2cbbbb8d0c37fe7e666c11bae9149',1,'nnet::MLPOptimizer::Operation::applyChanges()'],['../classnnet_1_1_m_p_i_m_l_p_optimizer_1_1_operation.html#af02273b1e75b75ab04f30dbb50678478',1,'nnet::MPIMLPOptimizer::Operation::applyChanges()']]],
   ['assign_5',['assign',['../classimage_1_1_grayscale_image.html#a54d5e3e63fd5f71a7c420cd5a27c6de6',1,'image::GrayscaleImage']]]
 ];

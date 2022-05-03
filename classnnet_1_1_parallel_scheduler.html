@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classnnet_1_1_parallel_scheduler.html'
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classnnet_1_1_parallel_scheduler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nnet::ParallelScheduler Class Reference</div>  </div>
@@ -106,6 +107,7 @@ Inheritance diagram for nnet::ParallelScheduler:</div>
   <map id="nnet::ParallelScheduler_map" name="nnet::ParallelScheduler_map">
 <area href="classnnet_1_1_batch_optimization_scheduler.html" title="Interface for an OptimizationScheduler that optimizes the weights of the network using batches of dat..." alt="nnet::BatchOptimizationScheduler" shape="rect" coords="0,56,200,80"/>
 <area href="classnnet_1_1_optimization_scheduler.html" title="Interface class for all scheduler. Allows to wrap and schedule the optimization process." alt="nnet::OptimizationScheduler" shape="rect" coords="0,0,200,24"/>
+<area href="classnnet_1_1_m_p_i_parallel_scheduler.html" title="An MPI implementation of the ParallelScheduler Model is gather, averaged, and broadcast to all nodes ..." alt="nnet::MPIParallelScheduler" shape="rect" coords="0,168,200,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -170,6 +172,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_parallel_scheduler.html#a338e4556021e24aac203c2c4ce27c5a7">endEpoch</a> () override</td></tr>
 <tr class="memdesc:a338e4556021e24aac203c2c4ce27c5a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at the end of the epoch. Can be used for post-processing, to reset the state of the scheduler, etc. The scheduler is free to ignore this call. <br /></td></tr>
 <tr class="separator:a338e4556021e24aac203c2c4ce27c5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:af1768a267ef996042fa3fcd6152ffb1c"><td class="memItemLeft" align="right" valign="top"><a id="af1768a267ef996042fa3fcd6152ffb1c"></a>
+std::unique_ptr&lt; <a class="el" href="classnnet_1_1_parallel_scheduler_1_1_dispatcher.html">Dispatcher</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>batch_dispatcher</b></td></tr>
+<tr class="separator:af1768a267ef996042fa3fcd6152ffb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331ed357ce1746a23d4ac4c4343c5332"><td class="memItemLeft" align="right" valign="top"><a id="a331ed357ce1746a23d4ac4c4343c5332"></a>
+<a class="el" href="classnnet_1_1_optimizer.html">Optimizer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>optimizer</b></td></tr>
+<tr class="separator:a331ed357ce1746a23d4ac4c4343c5332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022f8420447685b3c078d6383cd34e24"><td class="memItemLeft" align="right" valign="top"><a id="a022f8420447685b3c078d6383cd34e24"></a>
+std::unique_ptr&lt; <a class="el" href="classnnet_1_1_optimizer_1_1_operation.html">Optimizer::Operation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>optimizer_operation</b></td></tr>
+<tr class="separator:a022f8420447685b3c078d6383cd34e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A scheduler that parallelize the training of a neural network. Batches are distributed among all threads, and all OpenCL devices. Use <a class="el" href="classnnet_1_1_parallel_scheduler_1_1_policy.html" title="Describes the resources allocated to the parallel scheduler.">ParallelScheduler::Policy</a> to specify which resources are allowed. </p>
@@ -318,7 +332,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>nnet</b></li><li class="navelem"><a class="el" href="classnnet_1_1_parallel_scheduler.html">ParallelScheduler</a></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

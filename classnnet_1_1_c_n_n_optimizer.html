@@ -98,6 +98,7 @@ Inheritance diagram for nnet::CNNOptimizer:</div>
   <img src="classnnet_1_1_c_n_n_optimizer.png" usemap="#nnet::CNNOptimizer_map" alt=""/>
   <map id="nnet::CNNOptimizer_map" name="nnet::CNNOptimizer_map">
 <area href="classnnet_1_1_optimizer.html" title="Interface class for all optimizers." alt="nnet::Optimizer" shape="rect" coords="0,0,122,24"/>
+<area href="class_m_p_i_c_n_n_optimizer.html" alt="MPICNNOptimizer" shape="rect" coords="0,112,122,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -132,9 +133,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a26fbb42a0b0b44a1dedb562135407913"><td class="memItemLeft" align="right" valign="top"><a id="a26fbb42a0b0b44a1dedb562135407913"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>optimize</b> (const <a class="el" href="classmath_1_1cl_f_tensor.html">math::clFTensor</a> &amp;inputs, const <a class="el" href="classmath_1_1cl_f_tensor.html">math::clFTensor</a> &amp;targets, <a class="el" href="classnnet_1_1_c_n_n_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a> &amp;cnn_cache, <a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_weight_update_cache.html">MLPOptimizer::WeightUpdateCache</a> &amp;mlp_cache, cl::CommandQueue &amp;queue)</td></tr>
 <tr class="separator:a26fbb42a0b0b44a1dedb562135407913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d0966f324e92371c89b53675952cd76"><td class="memItemLeft" align="right" valign="top"><a id="a9d0966f324e92371c89b53675952cd76"></a>
-std::unique_ptr&lt; <a class="el" href="classnnet_1_1_c_n_n_optimizer_1_1_operation.html">Operation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>makeOperation</b> ()</td></tr>
-<tr class="separator:a9d0966f324e92371c89b53675952cd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f1ce91124b2c42c2487134be04cd16"><td class="memItemLeft" align="right" valign="top"><a id="ae0f1ce91124b2c42c2487134be04cd16"></a>
+std::unique_ptr&lt; <a class="el" href="classnnet_1_1_optimizer_1_1_operation.html">Optimizer::Operation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>makeOperation</b> ()</td></tr>
+<tr class="separator:ae0f1ce91124b2c42c2487134be04cd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd644cf2e647d05ac9b737946d78f2d2"><td class="memItemLeft" align="right" valign="top"><a id="acd644cf2e647d05ac9b737946d78f2d2"></a>
 std::unique_ptr&lt; <a class="el" href="classnnet_1_1_c_n_n_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>makeCache</b> ()</td></tr>
 <tr class="separator:acd644cf2e647d05ac9b737946d78f2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +157,7 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classnnet_1_1_c_n_n_opti
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>nnet</b></li><li class="navelem"><a class="el" href="classnnet_1_1_c_n_n_optimizer.html">CNNOptimizer</a></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

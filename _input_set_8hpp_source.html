@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('_input_set_8hpp_source.html',''); init
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classcontrol_1_1_sample.html">   13</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classcontrol_1_1_sample.html">Sample</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classcontrol_1_1_sample.html#a4d9d9fe40b86b972e1ced650e156405a">   21</a></span>&#160;    <a class="code" href="classcontrol_1_1_sample.html#a4d9d9fe40b86b972e1ced650e156405a">Sample</a>(<span class="keywordtype">size_t</span> <span class="keywordtype">id</span>, <span class="keywordtype">long</span> class_id, <a class="code" href="classmath_1_1cl_f_matrix.html">math::clFMatrix</a> &amp;&amp;data)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        : id(id), class_id(class_id), data(std::move(data)) {}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        : id(id), class_id(class_id), data(std::move(data)){};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">size_t</span> getId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> id; }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
@@ -139,151 +139,185 @@ $(document).ready(function(){initNavTree('_input_set_8hpp_source.html',''); init
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol_1_1_input_set.html#a5cd9f34116c6792f02e57d8ce0de82d0">shuffle</a>();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">size_t</span> getSize()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordflow">return</span> samples.size();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">size_t</span> getInputWidth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> input_width; }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">size_t</span> getInputHeight()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> input_height; }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classcontrol_1_1_sample.html">Sample</a> &amp;operator[](<span class="keywordtype">size_t</span> index) { <span class="keywordflow">return</span> samples[index]; }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcontrol_1_1_sample.html">Sample</a> &amp;operator[](<span class="keywordtype">size_t</span> index)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> samples[index]; }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">using</span> SampleIterator = std::vector&lt;Sample&gt;::iterator;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">using</span> ConstSampleIterator = std::vector&lt;Sample&gt;::const_iterator;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    SampleIterator begin() {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">return</span> samples.begin();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ConstSampleIterator begin()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <span class="keywordflow">return</span> samples.begin();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    SampleIterator end() {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <span class="keywordflow">return</span> samples.end();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    ConstSampleIterator end()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <span class="keywordflow">return</span> samples.end();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23">  149</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classmath_1_1cl_f_tensor.html">math::clFTensor</a> &amp;<a class="code" href="classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23">getTensor</a>(<span class="keywordtype">size_t</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="keywordflow">if</span> (index &gt; tensors.size()) <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Tensor index out of range&quot;</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">return</span> tensors[index];</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65">  161</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65">getClassOf</a>(<span class="keywordtype">size_t</span> global_index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      std::shared_lock lock(mutex);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">if</span> (global_index &gt; samples.size()) <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Sample index out of range&quot;</span>);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <span class="keywordflow">return</span> samples[global_index].getClass();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a03948c0f56cd0a8a85f2b060793ad8b6">  171</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classcontrol_1_1_input_set.html#a03948c0f56cd0a8a85f2b060793ad8b6">getClassCount</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordflow">return</span> class_names.size();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">using</span> TensorIterator = std::vector&lt;math::clFTensor&gt;::iterator;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">using</span> TensorConstIterator = std::vector&lt;math::clFTensor&gt;::const_iterator;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#ac98df36e71c2fa52a2a562d0808131ef">  185</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classcontrol_1_1_input_set.html#ac98df36e71c2fa52a2a562d0808131ef">getTensorCount</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="keywordflow">return</span> tensors.size();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a">  195</a></span>&#160;    <a class="code" href="classmath_1_1cl_f_tensor.html">math::clFTensor</a> &amp;<a class="code" href="classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a">getTensor</a>(<span class="keywordtype">size_t</span> index) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">if</span> (index &gt; tensors.size()) <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Tensor index out of range&quot;</span>);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <span class="keywordflow">return</span> tensors[index];</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">  205</a></span>&#160;    TensorIterator <a class="code" href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">beginTensor</a>() {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      <span class="keywordflow">return</span> tensors.begin();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    TensorConstIterator <a class="code" href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">beginTensor</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">return</span> tensors.begin();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">  219</a></span>&#160;    TensorIterator <a class="code" href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">endTensor</a>() {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">return</span> tensors.end();</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    TensorConstIterator <a class="code" href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">endTensor</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <span class="keywordflow">return</span> tensors.end();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a6e0057bf718e30634cba108bc623ca1d">  233</a></span>&#160;    std::vector&lt;math::clFTensor&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#a6e0057bf718e30634cba108bc623ca1d">getTensors</a>() {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      <span class="keywordflow">return</span> tensors;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a93f1384bf1e0a970d29902f2676c072f">  242</a></span>&#160;    <span class="keyword">const</span> std::vector&lt;math::clFTensor&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#a93f1384bf1e0a970d29902f2676c072f">getTensors</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordflow">return</span> tensors;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a718ed5168d3c47dfdeaebd89efe0b3b5">  253</a></span>&#160;    std::vector&lt;std::string&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#a718ed5168d3c47dfdeaebd89efe0b3b5">getClasses</a>() {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      std::shared_lock lock(mutex);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <span class="keywordflow">return</span> class_names;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#ae16b6717651c1e82339aef5df5db278a">  264</a></span>&#160;    <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#ae16b6717651c1e82339aef5df5db278a">getClasses</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      std::shared_lock lock(mutex);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      <span class="keywordflow">return</span> class_names;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5">  276</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5">updateClasses</a>(std::vector&lt;std::string&gt; classes) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      std::scoped_lock lock(mutex);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      class_names = std::move(classes);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// rows and cols dimension of the matrices/tensors</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">size_t</span> input_width = 0, input_height = 0;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// Store each sample in a vector.</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// This induces some data duplication as each sample store the associated matrix, which are also</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// included in the tensors vector. However, doing so allows returning iterators on the samples,</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// which is really practical.</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    std::vector&lt;Sample&gt; samples;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="comment">// Store the tensor separately to avoid copying the data</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    std::vector&lt;math::clFTensor&gt; tensors;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    std::vector&lt;std::string&gt; class_names;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">mutable</span> std::shared_mutex mutex;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  };</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}   <span class="comment">// namespace control</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> split(<span class="keywordtype">size_t</span> nb_sets, std::vector&lt;InputSet&gt; &amp;sub_sets) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">size_t</span> getSize()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">return</span> samples.size();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">size_t</span> getInputWidth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> input_width; }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">size_t</span> getInputHeight()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> input_height; }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="classcontrol_1_1_sample.html">Sample</a> &amp;operator[](<span class="keywordtype">size_t</span> index) { <span class="keywordflow">return</span> samples[index]; }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcontrol_1_1_sample.html">Sample</a> &amp;operator[](<span class="keywordtype">size_t</span> index)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> samples[index]; }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">using</span> SampleIterator = std::vector&lt;Sample&gt;::iterator;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">using</span> ConstSampleIterator = std::vector&lt;Sample&gt;::const_iterator;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    SampleIterator begin() {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <span class="keywordflow">return</span> samples.begin();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ConstSampleIterator begin()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">return</span> samples.begin();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    SampleIterator end() {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">return</span> samples.end();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    ConstSampleIterator end()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keywordflow">return</span> samples.end();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23">  151</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classmath_1_1cl_f_tensor.html">math::clFTensor</a> &amp;<a class="code" href="classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23">getTensor</a>(<span class="keywordtype">size_t</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">if</span> (index &gt; tensors.size()) <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Tensor index out of range&quot;</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">return</span> tensors[index];</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65">  163</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65">getClassOf</a>(<span class="keywordtype">size_t</span> global_index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      std::shared_lock lock(mutex);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">if</span> (global_index &gt; samples.size()) <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Sample index out of range&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <span class="keywordflow">return</span> samples[global_index].getClass();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a03948c0f56cd0a8a85f2b060793ad8b6">  173</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classcontrol_1_1_input_set.html#a03948c0f56cd0a8a85f2b060793ad8b6">getClassCount</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      <span class="keywordflow">return</span> class_names.size();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">using</span> TensorIterator = std::vector&lt;math::clFTensor&gt;::iterator;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">using</span> TensorConstIterator = std::vector&lt;math::clFTensor&gt;::const_iterator;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#ac98df36e71c2fa52a2a562d0808131ef">  187</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classcontrol_1_1_input_set.html#ac98df36e71c2fa52a2a562d0808131ef">getTensorCount</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="keywordflow">return</span> tensors.size();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a">  197</a></span>&#160;    <a class="code" href="classmath_1_1cl_f_tensor.html">math::clFTensor</a> &amp;<a class="code" href="classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a">getTensor</a>(<span class="keywordtype">size_t</span> index) {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keywordflow">if</span> (index &gt; tensors.size()) <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Tensor index out of range&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">return</span> tensors[index];</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">  207</a></span>&#160;    TensorIterator <a class="code" href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">beginTensor</a>() {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keywordflow">return</span> tensors.begin();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    TensorConstIterator <a class="code" href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">beginTensor</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <span class="keywordflow">return</span> tensors.begin();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">  221</a></span>&#160;    TensorIterator <a class="code" href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">endTensor</a>() {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <span class="keywordflow">return</span> tensors.end();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    TensorConstIterator <a class="code" href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">endTensor</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      <span class="keywordflow">return</span> tensors.end();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a6e0057bf718e30634cba108bc623ca1d">  235</a></span>&#160;    std::vector&lt;math::clFTensor&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#a6e0057bf718e30634cba108bc623ca1d">getTensors</a>() {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      <span class="keywordflow">return</span> tensors;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a93f1384bf1e0a970d29902f2676c072f">  244</a></span>&#160;    <span class="keyword">const</span> std::vector&lt;math::clFTensor&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#a93f1384bf1e0a970d29902f2676c072f">getTensors</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      std::shared_lock&lt;std::shared_mutex&gt; lock(mutex);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="keywordflow">return</span> tensors;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a718ed5168d3c47dfdeaebd89efe0b3b5">  255</a></span>&#160;    std::vector&lt;std::string&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#a718ed5168d3c47dfdeaebd89efe0b3b5">getClasses</a>() {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      std::shared_lock lock(mutex);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <span class="keywordflow">return</span> class_names;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#ae16b6717651c1e82339aef5df5db278a">  266</a></span>&#160;    <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;<a class="code" href="classcontrol_1_1_input_set.html#ae16b6717651c1e82339aef5df5db278a">getClasses</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      std::shared_lock lock(mutex);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      <span class="keywordflow">return</span> class_names;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5">  278</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5">updateClasses</a>(std::vector&lt;std::string&gt; classes) {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      std::scoped_lock lock(mutex);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      class_names = std::move(classes);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a4bd84a7cc938c758467ecb00dafa95df">  287</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classcontrol_1_1_input_set.html#a4bd84a7cc938c758467ecb00dafa95df">getSampleId</a>(<span class="keywordtype">size_t</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      std::scoped_lock lock(mutex);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      <span class="keywordflow">return</span> samples.at(index).getId();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a07683f48370ea9afc872cd15a431312d">  296</a></span>&#160;    std::vector&lt;size_t&gt; <a class="code" href="classcontrol_1_1_input_set.html#a07683f48370ea9afc872cd15a431312d">getSamplesIds</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      std::scoped_lock lock(mutex);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      std::vector&lt;size_t&gt; ids;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      std::for_each(samples.cbegin(), samples.cend(),</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    [&amp;ids](<span class="keyword">const</span> <a class="code" href="classcontrol_1_1_sample.html">Sample</a> &amp;sample) { ids.push_back(sample.getId()); });</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      <span class="keywordflow">return</span> ids;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="classcontrol_1_1_input_set.html#a415ed0acd598dce46455a8f97ccb463a">  308</a></span>&#160;    std::vector&lt;long&gt; <a class="code" href="classcontrol_1_1_input_set.html#a415ed0acd598dce46455a8f97ccb463a">getSamplesClassIds</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;      std::scoped_lock lock(mutex);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      std::vector&lt;long&gt; class_ids;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      std::for_each(samples.cbegin(), samples.cend(),</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    [&amp;class_ids](<span class="keyword">const</span> <a class="code" href="classcontrol_1_1_sample.html">Sample</a> &amp;sample) { class_ids.push_back(sample.getClass()); });</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      <span class="keywordflow">return</span> class_ids;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keyword">const</span> std::vector&lt;Sample&gt; &amp;getSamples() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">// Split the tensors into nb_sets parts.</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    std::vector&lt;std::vector&lt;math::clFTensor&gt;&gt; splitTensors(<span class="keywordtype">size_t</span> nb_sets) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="comment">// Split class names into nb_sets parts.</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    std::vector&lt;std::vector&lt;std::string&gt;&gt; splitClassNames(<span class="keywordtype">size_t</span> nb_sets) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">// rows and cols dimension of the matrices/tensors</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordtype">size_t</span> input_width = 0, input_height = 0;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// Store each sample in a vector.</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">// This induces some data duplication as each sample store the associated matrix, which are also</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">// included in the tensors vector. However, doing so allows returning iterators on the samples,</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// which is really practical.</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    std::vector&lt;Sample&gt; samples;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// Store the tensor separately to avoid copying the data</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    std::vector&lt;math::clFTensor&gt; tensors;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    std::vector&lt;std::string&gt; class_names;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keyword">mutable</span> std::shared_mutex mutex;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  };</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}   <span class="comment">// namespace control</span></div>
 <div class="ttc" id="aclasscontrol_1_1_input_set_html"><div class="ttname"><a href="classcontrol_1_1_input_set.html">control::InputSet</a></div><div class="ttdoc">Thread-safe set of samples that can be used to feed a neural network model Note that the samples are ...</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:53</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a03948c0f56cd0a8a85f2b060793ad8b6"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a03948c0f56cd0a8a85f2b060793ad8b6">control::InputSet::getClassCount</a></div><div class="ttdeci">size_t getClassCount() const</div><div class="ttdoc">Return the number of classes.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:171</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a194f5352786903a7b618a328eb6b8e23"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23">control::InputSet::getTensor</a></div><div class="ttdeci">const math::clFTensor &amp; getTensor(size_t index) const</div><div class="ttdoc">Return the tensor at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:149</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a1df77d22de301b116d8fba766c4b8b94"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a1df77d22de301b116d8fba766c4b8b94">control::InputSet::append</a></div><div class="ttdeci">void append(math::clFTensor &amp;&amp;tensor, const std::vector&lt; size_t &gt; &amp;ids, const std::vector&lt; long &gt; &amp;class_ids={})</div><div class="ttdoc">Append the given samples and their associated tensor to the input set. Samples are added at the end o...</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:44</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a2bf76ed5dd9f349cabde840649b03334"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a2bf76ed5dd9f349cabde840649b03334">control::InputSet::alterTensors</a></div><div class="ttdeci">void alterTensors(size_t new_tensor_size)</div><div class="ttdoc">Alter the tensors size and reorder the samples (Maintaining the same ordering) to match the new tenso...</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:67</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a3229e9a95a2605b8a3e857a567f5ea1e"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">control::InputSet::endTensor</a></div><div class="ttdeci">TensorIterator endTensor()</div><div class="ttdoc">Return an iterator to the end of the tensors contained in this set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:219</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a498f3ad8d4b3400b8a12db2b11c3e03c"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a498f3ad8d4b3400b8a12db2b11c3e03c">control::InputSet::removeTensors</a></div><div class="ttdeci">void removeTensors(size_t start, size_t end)</div><div class="ttdoc">Remove tensors in [start, end[. This operation is thread-safe, but invalidates any iterators.</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:92</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a5cd9f34116c6792f02e57d8ce0de82d0"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a5cd9f34116c6792f02e57d8ce0de82d0">control::InputSet::shuffle</a></div><div class="ttdeci">void shuffle()</div><div class="ttdoc">Shuffle the samples in the set using a random seed. This operation is thread-safe,...</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:152</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a6e0057bf718e30634cba108bc623ca1d"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a6e0057bf718e30634cba108bc623ca1d">control::InputSet::getTensors</a></div><div class="ttdeci">std::vector&lt; math::clFTensor &gt; &amp; getTensors()</div><div class="ttdoc">Return the vector containing all the tensors.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:233</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a718ed5168d3c47dfdeaebd89efe0b3b5"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a718ed5168d3c47dfdeaebd89efe0b3b5">control::InputSet::getClasses</a></div><div class="ttdeci">std::vector&lt; std::string &gt; &amp; getClasses()</div><div class="ttdoc">Return the class id of the sample at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:253</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a73ba7ed3aaca1c5bab9a6699ed238d9a"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a">control::InputSet::getTensor</a></div><div class="ttdeci">math::clFTensor &amp; getTensor(size_t index)</div><div class="ttdoc">Return the tensor at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:195</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a8e91bac954e861357807a384af2f6a65"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65">control::InputSet::getClassOf</a></div><div class="ttdeci">long getClassOf(size_t global_index) const</div><div class="ttdoc">Return the class id of the sample at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:161</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_a93f1384bf1e0a970d29902f2676c072f"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a93f1384bf1e0a970d29902f2676c072f">control::InputSet::getTensors</a></div><div class="ttdeci">const std::vector&lt; math::clFTensor &gt; &amp; getTensors() const</div><div class="ttdoc">Return the vector containing all the tensors.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:242</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_aa44d4a8b336350606b22d31b16bf1ab5"><div class="ttname"><a href="classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5">control::InputSet::updateClasses</a></div><div class="ttdeci">void updateClasses(std::vector&lt; std::string &gt; classes)</div><div class="ttdoc">Update the classes of the samples in the input set. Note that this method only update the names of th...</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:276</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_aafe28d3a32e88d712825b500f9997c9e"><div class="ttname"><a href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">control::InputSet::beginTensor</a></div><div class="ttdeci">TensorIterator beginTensor()</div><div class="ttdoc">Return an iterator to the tensors contained in this set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:205</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_ac98df36e71c2fa52a2a562d0808131ef"><div class="ttname"><a href="classcontrol_1_1_input_set.html#ac98df36e71c2fa52a2a562d0808131ef">control::InputSet::getTensorCount</a></div><div class="ttdeci">size_t getTensorCount() const</div><div class="ttdoc">Return the number of tensors contained in this set Use getSize() to get the number of samples.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:185</div></div>
-<div class="ttc" id="aclasscontrol_1_1_input_set_html_ae16b6717651c1e82339aef5df5db278a"><div class="ttname"><a href="classcontrol_1_1_input_set.html#ae16b6717651c1e82339aef5df5db278a">control::InputSet::getClasses</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getClasses() const</div><div class="ttdoc">Return the class id of the sample at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:264</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a03948c0f56cd0a8a85f2b060793ad8b6"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a03948c0f56cd0a8a85f2b060793ad8b6">control::InputSet::getClassCount</a></div><div class="ttdeci">size_t getClassCount() const</div><div class="ttdoc">Return the number of classes.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:173</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a07683f48370ea9afc872cd15a431312d"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a07683f48370ea9afc872cd15a431312d">control::InputSet::getSamplesIds</a></div><div class="ttdeci">std::vector&lt; size_t &gt; getSamplesIds() const</div><div class="ttdoc">Return the id for each of the samples in the input set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:296</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a194f5352786903a7b618a328eb6b8e23"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23">control::InputSet::getTensor</a></div><div class="ttdeci">const math::clFTensor &amp; getTensor(size_t index) const</div><div class="ttdoc">Return the tensor at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:151</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a1df77d22de301b116d8fba766c4b8b94"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a1df77d22de301b116d8fba766c4b8b94">control::InputSet::append</a></div><div class="ttdeci">void append(math::clFTensor &amp;&amp;tensor, const std::vector&lt; size_t &gt; &amp;ids, const std::vector&lt; long &gt; &amp;class_ids={})</div><div class="ttdoc">Append the given samples and their associated tensor to the input set. Samples are added at the end o...</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:47</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a2bf76ed5dd9f349cabde840649b03334"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a2bf76ed5dd9f349cabde840649b03334">control::InputSet::alterTensors</a></div><div class="ttdeci">void alterTensors(size_t new_tensor_size)</div><div class="ttdoc">Alter the tensors size and reorder the samples (Maintaining the same ordering) to match the new tenso...</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:76</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a3229e9a95a2605b8a3e857a567f5ea1e"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a3229e9a95a2605b8a3e857a567f5ea1e">control::InputSet::endTensor</a></div><div class="ttdeci">TensorIterator endTensor()</div><div class="ttdoc">Return an iterator to the end of the tensors contained in this set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:221</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a415ed0acd598dce46455a8f97ccb463a"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a415ed0acd598dce46455a8f97ccb463a">control::InputSet::getSamplesClassIds</a></div><div class="ttdeci">std::vector&lt; long &gt; getSamplesClassIds() const</div><div class="ttdoc">Return the class id for each of the samples in the input set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:308</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a498f3ad8d4b3400b8a12db2b11c3e03c"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a498f3ad8d4b3400b8a12db2b11c3e03c">control::InputSet::removeTensors</a></div><div class="ttdeci">void removeTensors(size_t start, size_t end)</div><div class="ttdoc">Remove tensors in [start, end[. This operation is thread-safe, but invalidates any iterators.</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:101</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a4bd84a7cc938c758467ecb00dafa95df"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a4bd84a7cc938c758467ecb00dafa95df">control::InputSet::getSampleId</a></div><div class="ttdeci">size_t getSampleId(size_t index) const</div><div class="ttdoc">Return the id for a specific sample in the input set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:287</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a5cd9f34116c6792f02e57d8ce0de82d0"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a5cd9f34116c6792f02e57d8ce0de82d0">control::InputSet::shuffle</a></div><div class="ttdeci">void shuffle()</div><div class="ttdoc">Shuffle the samples in the set using a random seed. This operation is thread-safe,...</div><div class="ttdef"><b>Definition:</b> InputSet.cpp:161</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a6e0057bf718e30634cba108bc623ca1d"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a6e0057bf718e30634cba108bc623ca1d">control::InputSet::getTensors</a></div><div class="ttdeci">std::vector&lt; math::clFTensor &gt; &amp; getTensors()</div><div class="ttdoc">Return the vector containing all the tensors.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:235</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a718ed5168d3c47dfdeaebd89efe0b3b5"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a718ed5168d3c47dfdeaebd89efe0b3b5">control::InputSet::getClasses</a></div><div class="ttdeci">std::vector&lt; std::string &gt; &amp; getClasses()</div><div class="ttdoc">Return the class id of the sample at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:255</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a73ba7ed3aaca1c5bab9a6699ed238d9a"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a">control::InputSet::getTensor</a></div><div class="ttdeci">math::clFTensor &amp; getTensor(size_t index)</div><div class="ttdoc">Return the tensor at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:197</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a8e91bac954e861357807a384af2f6a65"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65">control::InputSet::getClassOf</a></div><div class="ttdeci">long getClassOf(size_t global_index) const</div><div class="ttdoc">Return the class id of the sample at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:163</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_a93f1384bf1e0a970d29902f2676c072f"><div class="ttname"><a href="classcontrol_1_1_input_set.html#a93f1384bf1e0a970d29902f2676c072f">control::InputSet::getTensors</a></div><div class="ttdeci">const std::vector&lt; math::clFTensor &gt; &amp; getTensors() const</div><div class="ttdoc">Return the vector containing all the tensors.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:244</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_aa44d4a8b336350606b22d31b16bf1ab5"><div class="ttname"><a href="classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5">control::InputSet::updateClasses</a></div><div class="ttdeci">void updateClasses(std::vector&lt; std::string &gt; classes)</div><div class="ttdoc">Update the classes of the samples in the input set. Note that this method only update the names of th...</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:278</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_aafe28d3a32e88d712825b500f9997c9e"><div class="ttname"><a href="classcontrol_1_1_input_set.html#aafe28d3a32e88d712825b500f9997c9e">control::InputSet::beginTensor</a></div><div class="ttdeci">TensorIterator beginTensor()</div><div class="ttdoc">Return an iterator to the tensors contained in this set.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:207</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_ac98df36e71c2fa52a2a562d0808131ef"><div class="ttname"><a href="classcontrol_1_1_input_set.html#ac98df36e71c2fa52a2a562d0808131ef">control::InputSet::getTensorCount</a></div><div class="ttdeci">size_t getTensorCount() const</div><div class="ttdoc">Return the number of tensors contained in this set Use getSize() to get the number of samples.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:187</div></div>
+<div class="ttc" id="aclasscontrol_1_1_input_set_html_ae16b6717651c1e82339aef5df5db278a"><div class="ttname"><a href="classcontrol_1_1_input_set.html#ae16b6717651c1e82339aef5df5db278a">control::InputSet::getClasses</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; getClasses() const</div><div class="ttdoc">Return the class id of the sample at the given index.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:266</div></div>
 <div class="ttc" id="aclasscontrol_1_1_sample_html"><div class="ttname"><a href="classcontrol_1_1_sample.html">control::Sample</a></div><div class="ttdoc">A sample of input data.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:13</div></div>
 <div class="ttc" id="aclasscontrol_1_1_sample_html_a4d9d9fe40b86b972e1ced650e156405a"><div class="ttname"><a href="classcontrol_1_1_sample.html#a4d9d9fe40b86b972e1ced650e156405a">control::Sample::Sample</a></div><div class="ttdeci">Sample(size_t id, long class_id, math::clFMatrix &amp;&amp;data)</div><div class="ttdoc">Builds a new sample.</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:21</div></div>
 <div class="ttc" id="aclasscontrol_1_1_sample_html_aa069d4b9efbe05c4da7b68919f58e80e"><div class="ttname"><a href="classcontrol_1_1_sample.html#aa069d4b9efbe05c4da7b68919f58e80e">control::Sample::getData</a></div><div class="ttdeci">math::clFMatrix &amp; getData()</div><div class="ttdoc">Returns the opencl buffer containing the data of this sample Note that the data returned may be part ...</div><div class="ttdef"><b>Definition:</b> InputSet.hpp:35</div></div>
@@ -296,7 +330,7 @@ $(document).ready(function(){initNavTree('_input_set_8hpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_01b2e4de332d654669e2cef5ae468548.html">controlSystem</a></li><li class="navelem"><b>InputSet.hpp</b></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

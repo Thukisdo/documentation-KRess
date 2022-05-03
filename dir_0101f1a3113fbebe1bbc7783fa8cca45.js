@@ -7,5 +7,6 @@ var dir_0101f1a3113fbebe1bbc7783fa8cca45 =
     [ "CNNOptimizer.hpp", "_c_n_n_optimizer_8hpp_source.html", null ],
     [ "CNNStorageBP.hpp", "_c_n_n_storage_b_p_8hpp_source.html", null ],
     [ "CNNTopology.hpp", "_c_n_n_topology_8hpp_source.html", null ],
-    [ "CNNTopologyLayer.hpp", "_c_n_n_topology_layer_8hpp_source.html", null ]
+    [ "CNNTopologyLayer.hpp", "_c_n_n_topology_layer_8hpp_source.html", null ],
+    [ "MPICNNOptimizer.hpp", "_m_p_i_c_n_n_optimizer_8hpp_source.html", null ]
 ];

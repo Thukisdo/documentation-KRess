@@ -23,6 +23,10 @@ var classcontrol_1_1_input_set =
     [ "getClassOf", "classcontrol_1_1_input_set.html#a8e91bac954e861357807a384af2f6a65", null ],
     [ "getInputHeight", "classcontrol_1_1_input_set.html#a779011229a7c5841d58df9d3d242a83c", null ],
     [ "getInputWidth", "classcontrol_1_1_input_set.html#affd089b55364cd7753569c146f9360dd", null ],
+    [ "getSampleId", "classcontrol_1_1_input_set.html#a4bd84a7cc938c758467ecb00dafa95df", null ],
+    [ "getSamples", "classcontrol_1_1_input_set.html#ade419bff017e2398d09e222d769aada8", null ],
+    [ "getSamplesClassIds", "classcontrol_1_1_input_set.html#a415ed0acd598dce46455a8f97ccb463a", null ],
+    [ "getSamplesIds", "classcontrol_1_1_input_set.html#a07683f48370ea9afc872cd15a431312d", null ],
     [ "getSize", "classcontrol_1_1_input_set.html#a846cb0b720d2eb9e2a7d677c1d8038dc", null ],
     [ "getTensor", "classcontrol_1_1_input_set.html#a73ba7ed3aaca1c5bab9a6699ed238d9a", null ],
     [ "getTensor", "classcontrol_1_1_input_set.html#a194f5352786903a7b618a328eb6b8e23", null ],
@@ -36,5 +40,6 @@ var classcontrol_1_1_input_set =
     [ "removeTensors", "classcontrol_1_1_input_set.html#a498f3ad8d4b3400b8a12db2b11c3e03c", null ],
     [ "shuffle", "classcontrol_1_1_input_set.html#a5cd9f34116c6792f02e57d8ce0de82d0", null ],
     [ "shuffle", "classcontrol_1_1_input_set.html#ad8a20149c5ffd00395153649c8c7fe1c", null ],
+    [ "split", "classcontrol_1_1_input_set.html#a0ff914ea718b2c1ad999c9d1495010b3", null ],
     [ "updateClasses", "classcontrol_1_1_input_set.html#aa44d4a8b336350606b22d31b16bf1ab5", null ]
 ];

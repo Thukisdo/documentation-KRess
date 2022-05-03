@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('classnnet_1_1_m_l_p_optimizer.html',''
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classnnet_1_1_m_l_p_optimizer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nnet::MLPOptimizer Class Reference</div>  </div>
@@ -103,7 +104,8 @@ Inheritance diagram for nnet::MLPOptimizer:</div>
  <div class="center">
   <img src="classnnet_1_1_m_l_p_optimizer.png" usemap="#nnet::MLPOptimizer_map" alt=""/>
   <map id="nnet::MLPOptimizer_map" name="nnet::MLPOptimizer_map">
-<area href="classnnet_1_1_optimizer.html" title="Interface class for all optimizers." alt="nnet::Optimizer" shape="rect" coords="0,0,121,24"/>
+<area href="classnnet_1_1_optimizer.html" title="Interface class for all optimizers." alt="nnet::Optimizer" shape="rect" coords="0,0,143,24"/>
+<area href="classnnet_1_1_m_p_i_m_l_p_optimizer.html" alt="nnet::MPIMLPOptimizer" shape="rect" coords="0,112,143,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -139,6 +141,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:ab9d842d44bbc60f23440cb4edbb61c85"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::unique_ptr&lt; <a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_weight_update_cache.html">WeightUpdateCache</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer.html#ab9d842d44bbc60f23440cb4edbb61c85">makeCaches</a> (size_t ncache)</td></tr>
 <tr class="memdesc:ab9d842d44bbc60f23440cb4edbb61c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a vector of caches that can be used with this object.  <a href="classnnet_1_1_m_l_p_optimizer.html#ab9d842d44bbc60f23440cb4edbb61c85">More...</a><br /></td></tr>
 <tr class="separator:ab9d842d44bbc60f23440cb4edbb61c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce28e01b38d029a5d072c90edc17a88"><td class="memItemLeft" align="right" valign="top"><a id="abce28e01b38d029a5d072c90edc17a88"></a>
+<a class="el" href="classnnet_1_1_m_l_perceptron.html">MLPerceptron</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getNeuralNetwork</b> ()</td></tr>
+<tr class="separator:abce28e01b38d029a5d072c90edc17a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classnnet_1_1_optimizer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnnet_1_1_optimizer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classnnet_1_1_optimizer.html">nnet::Optimizer</a></td></tr>
 <tr class="memitem:a7a1b65cfea913018870da630fcea30fe inherit pub_methods_classnnet_1_1_optimizer"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classnnet_1_1_optimizer_1_1_operation.html">Operation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_optimizer.html#a7a1b65cfea913018870da630fcea30fe">makeOperation</a> ()</td></tr>
 <tr class="memdesc:a7a1b65cfea913018870da630fcea30fe inherit pub_methods_classnnet_1_1_optimizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an operation that can be used to handle the optimization process. This object should be fed to a <a class="el" href="classnnet_1_1_optimization_scheduler.html" title="Interface class for all scheduler. Allows to wrap and schedule the optimization process.">OptimizationScheduler</a>.  <a href="classnnet_1_1_optimizer.html#a7a1b65cfea913018870da630fcea30fe">More...</a><br /></td></tr>
@@ -150,6 +155,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2036e5805a02092fe75bed8426fbf4f"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classnnet_1_1_m_l_p_optimizer.html">MLPOptimizer</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer.html#ad2036e5805a02092fe75bed8426fbf4f">make</a> (<a class="el" href="classnnet_1_1_m_l_p_model.html">MLPModel</a> &amp;model, Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:ad2036e5805a02092fe75bed8426fbf4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method, creates a new optimizer and optimization method and return the optimizer.  <a href="classnnet_1_1_m_l_p_optimizer.html#ad2036e5805a02092fe75bed8426fbf4f">More...</a><br /></td></tr>
 <tr class="separator:ad2036e5805a02092fe75bed8426fbf4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aa3db221a7d6a27234a6913e9b664726d"><td class="memItemLeft" align="right" valign="top"><a id="aa3db221a7d6a27234a6913e9b664726d"></a>
+<a class="el" href="classnnet_1_1_m_l_perceptron.html">MLPerceptron</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>neural_network</b></td></tr>
+<tr class="separator:aa3db221a7d6a27234a6913e9b664726d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An <a class="el" href="classnnet_1_1_optimizer.html" title="Interface class for all optimizers.">Optimizer</a> for MLP models. </p>
@@ -453,7 +464,7 @@ template&lt;class optim , typename... Args&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>nnet</b></li><li class="navelem"><a class="el" href="classnnet_1_1_m_l_p_optimizer.html">MLPOptimizer</a></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

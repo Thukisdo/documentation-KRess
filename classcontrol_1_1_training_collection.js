@@ -11,10 +11,12 @@ var classcontrol_1_1_training_collection =
     [ "getTargets", "classcontrol_1_1_training_collection.html#a330bccf9b9cc08e30cb4f16438c2a707", null ],
     [ "getTrainingSet", "classcontrol_1_1_training_collection.html#a165ad8c51cdebab5c9244373de2daee4", null ],
     [ "getTrainingSet", "classcontrol_1_1_training_collection.html#afd8a129b279f0bf39c64ec063f149819", null ],
+    [ "makeTrainingTargets", "classcontrol_1_1_training_collection.html#abf1f82324eff5952ea01f4d7a5ea5e3e", null ],
     [ "operator=", "classcontrol_1_1_training_collection.html#af789b8b593245b5b57ee722dbc9bf138", null ],
     [ "operator=", "classcontrol_1_1_training_collection.html#ad2ddeffc2f7d6b499aa84491157263ad", null ],
     [ "shuffle", "classcontrol_1_1_training_collection.html#a07275bc334c00db8cb47c1631f7a2187", null ],
     [ "shuffle", "classcontrol_1_1_training_collection.html#ab486dc7101e53966fe7aa01527261493", null ],
+    [ "splitTrainingSet", "classcontrol_1_1_training_collection.html#ad66282b360c827652dc57274f7089e14", null ],
     [ "updateClasses", "classcontrol_1_1_training_collection.html#ae07bab8185e4aeca5a298ebb4a4118c2", null ],
     [ "TrainingCollectionLoader", "classcontrol_1_1_training_collection.html#a92f6008c956b3c87b4f6ce4505b32da0", null ]
 ];

@@ -78,6 +78,9 @@ var namespaces_dup =
       [ "randomize", "_matrix_8hpp.html#aa6611fe424fae0e2072efb0b75c7d78a", null ],
       [ "randomize", "_matrix_8hpp.html#afc2285266c2a28c4c93d13b9e7585ea4", null ]
     ] ],
+    [ "mpiw", null, [
+      [ "TrainingCollectionScatterer", "classmpiw_1_1_training_collection_scatterer.html", "classmpiw_1_1_training_collection_scatterer" ]
+    ] ],
     [ "nnet", null, [
       [ "CNN", "classnnet_1_1_c_n_n.html", "classnnet_1_1_c_n_n" ],
       [ "CNNLayer", "classnnet_1_1_c_n_n_layer.html", "classnnet_1_1_c_n_n_layer" ],
@@ -104,6 +107,7 @@ var namespaces_dup =
       [ "BatchLocation", "classnnet_1_1_batch_location.html", "classnnet_1_1_batch_location" ],
       [ "BatchSchedulerJob", "classnnet_1_1_batch_scheduler_job.html", "classnnet_1_1_batch_scheduler_job" ],
       [ "BatchOptimizationScheduler", "classnnet_1_1_batch_optimization_scheduler.html", "classnnet_1_1_batch_optimization_scheduler" ],
+      [ "MPIParallelScheduler", "classnnet_1_1_m_p_i_parallel_scheduler.html", "classnnet_1_1_m_p_i_parallel_scheduler" ],
       [ "OptimizationScheduler", "classnnet_1_1_optimization_scheduler.html", "classnnet_1_1_optimization_scheduler" ],
       [ "SchedulerDecorator", "classnnet_1_1_scheduler_decorator.html", "classnnet_1_1_scheduler_decorator" ],
       [ "ParallelScheduler", "classnnet_1_1_parallel_scheduler.html", "classnnet_1_1_parallel_scheduler" ],
@@ -115,6 +119,8 @@ var namespaces_dup =
       [ "MLPModelSerializer", "classnnet_1_1_m_l_p_model_serializer.html", "classnnet_1_1_m_l_p_model_serializer" ],
       [ "MLPOptimizer", "classnnet_1_1_m_l_p_optimizer.html", "classnnet_1_1_m_l_p_optimizer" ],
       [ "MLPSerializer", "classnnet_1_1_m_l_p_serializer.html", "classnnet_1_1_m_l_p_serializer" ],
+      [ "MPIMLPModel", "classnnet_1_1_m_p_i_m_l_p_model.html", "classnnet_1_1_m_p_i_m_l_p_model" ],
+      [ "MPIMLPOptimizer", "classnnet_1_1_m_p_i_m_l_p_optimizer.html", "classnnet_1_1_m_p_i_m_l_p_optimizer" ],
       [ "DecayMomentumOptimization", "classnnet_1_1_decay_momentum_optimization.html", "classnnet_1_1_decay_momentum_optimization" ],
       [ "DecayOptimization", "classnnet_1_1_decay_optimization.html", "classnnet_1_1_decay_optimization" ],
       [ "MomentumOptimization", "classnnet_1_1_momentum_optimization.html", "classnnet_1_1_momentum_optimization" ],

@@ -103,7 +103,8 @@ Inheritance diagram for nnet::MLPOptimizer::Operation:</div>
  <div class="center">
   <img src="classnnet_1_1_m_l_p_optimizer_1_1_operation.png" usemap="#nnet::MLPOptimizer::Operation_map" alt=""/>
   <map id="nnet::MLPOptimizer::Operation_map" name="nnet::MLPOptimizer::Operation_map">
-<area href="classnnet_1_1_optimizer_1_1_operation.html" title="High level interface that wraps the Optimizer and provides parallelism capabilities." alt="nnet::Optimizer::Operation" shape="rect" coords="0,0,183,24"/>
+<area href="classnnet_1_1_optimizer_1_1_operation.html" title="High level interface that wraps the Optimizer and provides parallelism capabilities." alt="nnet::Optimizer::Operation" shape="rect" coords="0,0,205,24"/>
+<area href="classnnet_1_1_m_p_i_m_l_p_optimizer_1_1_operation.html" alt="nnet::MPIMLPOptimizer::Operation" shape="rect" coords="0,112,205,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -131,13 +132,13 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a8e4a02364a008366f6b2439c16ba2be8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#a8e4a02364a008366f6b2439c16ba2be8">reduceAll</a> (cl::CommandQueue &amp;queue) override</td></tr>
+<tr class="memitem:a8e4a02364a008366f6b2439c16ba2be8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#a8e4a02364a008366f6b2439c16ba2be8">reduceAll</a> (cl::CommandQueue &amp;queue) override</td></tr>
 <tr class="memdesc:a8e4a02364a008366f6b2439c16ba2be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums all the changes in the caches.  <a href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#a8e4a02364a008366f6b2439c16ba2be8">More...</a><br /></td></tr>
 <tr class="separator:a8e4a02364a008366f6b2439c16ba2be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7d2cbbbb8d0c37fe7e666c11bae9149"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#aa7d2cbbbb8d0c37fe7e666c11bae9149">applyChanges</a> (cl::CommandQueue &amp;queue) override</td></tr>
+<tr class="memitem:aa7d2cbbbb8d0c37fe7e666c11bae9149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#aa7d2cbbbb8d0c37fe7e666c11bae9149">applyChanges</a> (cl::CommandQueue &amp;queue) override</td></tr>
 <tr class="memdesc:aa7d2cbbbb8d0c37fe7e666c11bae9149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply all the changes to the model.  <a href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#aa7d2cbbbb8d0c37fe7e666c11bae9149">More...</a><br /></td></tr>
 <tr class="separator:aa7d2cbbbb8d0c37fe7e666c11bae9149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279b3ab5ede4ec3e5a083d3d054f63c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#a279b3ab5ede4ec3e5a083d3d054f63c9">clearChanges</a> (cl::CommandQueue &amp;queue) override</td></tr>
+<tr class="memitem:a279b3ab5ede4ec3e5a083d3d054f63c9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#a279b3ab5ede4ec3e5a083d3d054f63c9">clearChanges</a> (cl::CommandQueue &amp;queue) override</td></tr>
 <tr class="memdesc:a279b3ab5ede4ec3e5a083d3d054f63c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all the caches.  <a href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html#a279b3ab5ede4ec3e5a083d3d054f63c9">More...</a><br /></td></tr>
 <tr class="separator:a279b3ab5ede4ec3e5a083d3d054f63c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -187,6 +188,8 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classnnet_1_1_m_l_p_opti
 
 <p>Implements <a class="el" href="classnnet_1_1_optimizer_1_1_operation.html">nnet::Optimizer::Operation</a>.</p>
 
+<p>Reimplemented in <a class="el" href="classnnet_1_1_m_p_i_m_l_p_optimizer_1_1_operation.html#af02273b1e75b75ab04f30dbb50678478">nnet::MPIMLPOptimizer::Operation</a>.</p>
+
 </div>
 </div>
 <a id="a279b3ab5ede4ec3e5a083d3d054f63c9"></a>
@@ -222,6 +225,8 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classnnet_1_1_m_l_p_opti
 </dl>
 
 <p>Implements <a class="el" href="classnnet_1_1_optimizer_1_1_operation.html">nnet::Optimizer::Operation</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classnnet_1_1_m_p_i_m_l_p_optimizer_1_1_operation.html#af178157a60cde6a03489af2368942324">nnet::MPIMLPOptimizer::Operation</a>.</p>
 
 </div>
 </div>
@@ -372,6 +377,8 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classnnet_1_1_m_l_p_opti
 
 <p>Implements <a class="el" href="classnnet_1_1_optimizer_1_1_operation.html">nnet::Optimizer::Operation</a>.</p>
 
+<p>Reimplemented in <a class="el" href="classnnet_1_1_m_p_i_m_l_p_optimizer_1_1_operation.html#a826fb46d9381c97b46fd887f0eb5b88c">nnet::MPIMLPOptimizer::Operation</a>.</p>
+
 </div>
 </div>
 <a id="a747f3261ef0cd7f339c79cbfea9381fc"></a>
@@ -420,7 +427,7 @@ std::vector&lt; std::unique_ptr&lt; <a class="el" href="classnnet_1_1_m_l_p_opti
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>nnet</b></li><li class="navelem"><a class="el" href="classnnet_1_1_m_l_p_optimizer.html">MLPOptimizer</a></li><li class="navelem"><a class="el" href="classnnet_1_1_m_l_p_optimizer_1_1_operation.html">Operation</a></li>
-    <li class="footer">Generated on Tue May 3 2022 15:14:50 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 3 2022 15:23:03 for Kreps by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

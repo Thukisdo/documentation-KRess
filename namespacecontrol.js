@@ -11,5 +11,6 @@ var namespacecontrol =
     [ "TrainingCollection", "classcontrol_1_1_training_collection.html", "classcontrol_1_1_training_collection" ],
     [ "TrainingCollectionLoader", "classcontrol_1_1_training_collection_loader.html", "classcontrol_1_1_training_collection_loader" ],
     [ "TrainingController", "classcontrol_1_1_training_controller.html", "classcontrol_1_1_training_controller" ],
+    [ "MPITrainingController", "classcontrol_1_1_m_p_i_training_controller.html", "classcontrol_1_1_m_p_i_training_controller" ],
     [ "operator<<", "namespacecontrol.html#a17330449a36a8f64d00e1cfe5c9556d0", null ]
 ];

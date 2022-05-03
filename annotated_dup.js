@@ -11,7 +11,8 @@ var annotated_dup =
       [ "ModelEvolutionTracker", "classcontrol_1_1_model_evolution_tracker.html", "classcontrol_1_1_model_evolution_tracker" ],
       [ "TrainingCollection", "classcontrol_1_1_training_collection.html", "classcontrol_1_1_training_collection" ],
       [ "TrainingCollectionLoader", "classcontrol_1_1_training_collection_loader.html", "classcontrol_1_1_training_collection_loader" ],
-      [ "TrainingController", "classcontrol_1_1_training_controller.html", "classcontrol_1_1_training_controller" ]
+      [ "TrainingController", "classcontrol_1_1_training_controller.html", "classcontrol_1_1_training_controller" ],
+      [ "MPITrainingController", "classcontrol_1_1_m_p_i_training_controller.html", "classcontrol_1_1_m_p_i_training_controller" ]
     ] ],
     [ "image", null, [
       [ "transform", null, [
@@ -34,6 +35,9 @@ var annotated_dup =
       [ "clFMatrix", "classmath_1_1cl_f_matrix.html", "classmath_1_1cl_f_matrix" ],
       [ "clFTensor", "classmath_1_1cl_f_tensor.html", "classmath_1_1cl_f_tensor" ],
       [ "Matrix", "classmath_1_1_matrix.html", "classmath_1_1_matrix" ]
+    ] ],
+    [ "mpiw", null, [
+      [ "TrainingCollectionScatterer", "classmpiw_1_1_training_collection_scatterer.html", "classmpiw_1_1_training_collection_scatterer" ]
     ] ],
     [ "nnet", null, [
       [ "CNN", "classnnet_1_1_c_n_n.html", "classnnet_1_1_c_n_n" ],
@@ -61,6 +65,7 @@ var annotated_dup =
       [ "BatchLocation", "classnnet_1_1_batch_location.html", "classnnet_1_1_batch_location" ],
       [ "BatchSchedulerJob", "classnnet_1_1_batch_scheduler_job.html", "classnnet_1_1_batch_scheduler_job" ],
       [ "BatchOptimizationScheduler", "classnnet_1_1_batch_optimization_scheduler.html", "classnnet_1_1_batch_optimization_scheduler" ],
+      [ "MPIParallelScheduler", "classnnet_1_1_m_p_i_parallel_scheduler.html", "classnnet_1_1_m_p_i_parallel_scheduler" ],
       [ "OptimizationScheduler", "classnnet_1_1_optimization_scheduler.html", "classnnet_1_1_optimization_scheduler" ],
       [ "SchedulerDecorator", "classnnet_1_1_scheduler_decorator.html", "classnnet_1_1_scheduler_decorator" ],
       [ "ParallelScheduler", "classnnet_1_1_parallel_scheduler.html", "classnnet_1_1_parallel_scheduler" ],
@@ -72,6 +77,8 @@ var annotated_dup =
       [ "MLPModelSerializer", "classnnet_1_1_m_l_p_model_serializer.html", "classnnet_1_1_m_l_p_model_serializer" ],
       [ "MLPOptimizer", "classnnet_1_1_m_l_p_optimizer.html", "classnnet_1_1_m_l_p_optimizer" ],
       [ "MLPSerializer", "classnnet_1_1_m_l_p_serializer.html", "classnnet_1_1_m_l_p_serializer" ],
+      [ "MPIMLPModel", "classnnet_1_1_m_p_i_m_l_p_model.html", "classnnet_1_1_m_p_i_m_l_p_model" ],
+      [ "MPIMLPOptimizer", "classnnet_1_1_m_p_i_m_l_p_optimizer.html", "classnnet_1_1_m_p_i_m_l_p_optimizer" ],
       [ "DecayMomentumOptimization", "classnnet_1_1_decay_momentum_optimization.html", "classnnet_1_1_decay_momentum_optimization" ],
       [ "DecayOptimization", "classnnet_1_1_decay_optimization.html", "classnnet_1_1_decay_optimization" ],
       [ "MomentumOptimization", "classnnet_1_1_momentum_optimization.html", "classnnet_1_1_momentum_optimization" ],
@@ -82,5 +89,6 @@ var annotated_dup =
       [ "clKernelMap", "classutils_1_1cl_kernel_map.html", "classutils_1_1cl_kernel_map" ],
       [ "clPlatformSelector", "classutils_1_1cl_platform_selector.html", "classutils_1_1cl_platform_selector" ],
       [ "clWrapper", "classutils_1_1cl_wrapper.html", "classutils_1_1cl_wrapper" ]
-    ] ]
+    ] ],
+    [ "MPICNNOptimizer", "class_m_p_i_c_n_n_optimizer.html", "class_m_p_i_c_n_n_optimizer" ]
 ];
